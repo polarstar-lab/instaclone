@@ -10,9 +10,7 @@ const GithubLoginButton = ({ button, style }) => {
   return (
     <a
       href={`https://github.com/login/oauth/authorize?client_id=${
-        process.env.NODE_ENV === 'development'
-          ? '90456f1a1c91be6f9ed2'
-          : '562f69062d65058bc089'
+        process.env.GITHUB_CLIENT_ID
       }&redirect_uri=${
         window.location.origin
       }/login&state=${authState}&scope=user:email`}
